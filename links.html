@@ -45,6 +45,21 @@
   .footer { margin-top: 44px; text-align: center; font-size: 11px; color: var(--text-muted); letter-spacing: 0.1em; font-family: 'Orbitron', monospace; font-weight: 700; }
   .footer span { color: var(--neon); }
   @media (prefers-reduced-motion: reduce) { .link-btn { transition: none; } }
+  .featured { display: block; width: 100%; max-width: 480px; margin-bottom: 14px; text-decoration: none; color: var(--white); background: var(--gray); border: 1px solid var(--neon-border); border-radius: 12px; overflow: hidden; transition: border-color 0.2s, transform 0.15s; }
+  .featured:hover { border-color: var(--neon); transform: translateY(-2px); }
+  .featured:focus-visible, .link-btn:focus-visible { outline: 2px solid var(--neon); outline-offset: 3px; }
+  .featured-thumb { position: relative; aspect-ratio: 16 / 9; background: #000; }
+  .featured-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.85; transition: opacity 0.2s; }
+  .featured:hover .featured-thumb img { opacity: 1; }
+  .featured-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .featured-play span { width: 64px; height: 64px; border-radius: 50%; background: var(--neon); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px rgba(230,255,0,0.18); }
+  .featured-play svg { width: 26px; height: 26px; margin-left: 4px; }
+  .featured-tag { position: absolute; top: 12px; left: 12px; background: var(--black); color: var(--neon); border: 1px solid var(--neon-border); border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 600; }
+  .featured-body { display: flex; align-items: center; gap: 12px; padding: 14px 18px; }
+  .featured-title { font-family: 'Orbitron', 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; color: var(--neon); }
+  .featured-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .featured-body .link-arrow { margin-left: auto; }
+  @media (prefers-reduced-motion: reduce) { .featured, .featured-thumb img { transition: none; } }
 </style>
 </head>
 <body>
@@ -58,6 +73,21 @@
 </header>
 
 <div class="divider"></div>
+
+<a class="featured" href="https://youtu.be/cOk4vgtKgLA" target="_blank" rel="noopener" aria-label="Assista agora o novo vídeo no YouTube">
+  <div class="featured-thumb">
+    <img src="https://img.youtube.com/vi/cOk4vgtKgLA/hqdefault.jpg" alt="Miniatura do novo vídeo" loading="lazy">
+    <div class="featured-play"><span><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" fill="#111111"/></svg></span></div>
+    <div class="featured-tag">Novo vídeo</div>
+  </div>
+  <div class="featured-body">
+    <div>
+      <div class="featured-title">Assista agora</div>
+      <div class="featured-sub">Novo vídeo no canal do YouTube</div>
+    </div>
+    <span class="link-arrow">→</span>
+  </div>
+</a>
 
 <nav class="links" aria-label="Links de Rodrigo Costa">
 
